@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Shaparak Verifier",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Verify Shaparak gateways and protect users against phishing attacks",
+    "description": "The description of the application"
+  },
+  "verified": {
+  	"message": "Verified!",
+  	"description": "The verified status"
+  }
+}
