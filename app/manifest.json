@@ -23,6 +23,7 @@
     ]
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "notifications"
   ]
 }
