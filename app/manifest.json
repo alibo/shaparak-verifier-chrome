@@ -16,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "default_locale": "en",
+  "options_page": "options.html",
   "background": {
     "scripts": [
       "scripts/chromereload.js",
@@ -24,6 +25,7 @@
   },
   "permissions": [
     "tabs",
-    "notifications"
+    "notifications",
+    "storage"
   ]
 }

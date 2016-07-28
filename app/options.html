@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+		@font-face {
+		  font-family: Vazir;
+		  src: url('fonts/Vazir.eot');
+		  src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+		       url('fonts/Vazir.woff') format('woff'),
+		       url('fonts/Vazir.ttf') format('truetype');
+		  font-weight: normal;
+		}
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+			font-family: "Vazir", "Tahoma", sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 100px auto 50px;
+    }
+
+    #logo {
+      width: 100%;
+      height: 96px;
+      margin: 100px 0px 50px;
+      text-align: center;
+    }
+
+    #logo img {
+      width: 96px;
+    }
+
+    .row {
+      width: 100%;
+      clear:both;
+      overflow: auto;
+      zoom: 1;
+      direction: rtl;
+      padding: 25px 0px;
+    }
+
+    .row.disabled {
+      display: none;
+    }
+
+    .row .label {
+      width: 50%;
+      font-size: 20px;
+      line-height: 2em;
+      float: right;
+      text-align: left;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0px 20px;
+      border-left: 1px #ddd solid;
+    }
+
+    .row .label .description {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4em;
+      color: #999999;
+    }
+
+    .row .label .description .warning {
+      background: #FDFBD2;
+      color: #ADA505;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    #successMessage {
+      background: #E0F6D9;
+      color: #2D7019;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 12px 30px;
+      border-radius: 6px;
+      opacity: 0;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      border: 1px #B0E99F solid;
+      transition: all .2s linear;
+      font-size: 16px;
+    }
+
+    #successMessage.visible {
+      opacity: 1;
+    }
+
+    .row .input {
+      font-size: 20px;
+      line-height: 2em;
+      width: 45%;
+      float: left;
+    }
+
+    .row .input input, .row .input select {
+      font-size: 14px;
+      line-height: 1.5em;
+			font-family: "Vazir", "Tahoma", sans-serif;
+    }
+
+    .row .input #submit {
+      background: #57D131;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all .2s linear;
+    }
+
+    .row .input #submit:hover {
+      opacity: 0.7;
+    }
+  </style>
+  <script src="scripts/options.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="logo">
+      <img src="images/icon_128.png" alt="">
+    </div> <!-- #logo -->
+    
+    <div class="row">
+      <div class="label">
+        نمایش خودکار اعلان
+        <div class="description">
+          با فعال‌سازی این گزینه، به محض ورود به صفحات شاپرک، به طور خودکار یک اعلان دریافت خواهید کرد. 
+          <span class="warning">
+            در صورتی که کاربر سیستم‌عامل مک هستید توجه داشته باشید
+            که در صورت اجرای گوگل‌کروم به صورت تمام صفحه، اعلانات نمایش داده نخواهند شد.
+          </span>
+        </div> <!-- .description -->
+      </div> <!-- .label -->
+
+      <div class="input">
+        <input class="option" type="checkbox" name="automaticNotification" id="automaticNotification">
+      </div> <!-- .input -->
+    </div> <!-- .row -->
+
+    <div class="row" id="automaticNotificationDurationWrapper">
+      <div class="label">
+        مدت‌زمان نمایش اعلان
+      </div> <!-- .label -->
+
+      <div class="input">
+        <select class="option" name="automaticNotificationDuration" id="automaticNotificationDuration">
+          <option value="2" selected>کوتاه (۲ثانیه)</option>
+          <option value="5">عادی (۵ثانیه)</option>
+          <option value="10">طولانی (۱۰ثانیه)</option>
+        </select>
+      </div> <!-- .input -->
+    </div> <!-- .row -->
+
+  </div> <!-- .container -->
+
+  <div id="successMessage">
+    تنظیمات با موفقیت ذخیره شد
+  </div>
+</body>
+</html>
