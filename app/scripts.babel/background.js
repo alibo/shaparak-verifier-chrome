@@ -2,7 +2,7 @@
 
 import Notification from './Notification.js';
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (shouldNotifyUser(changeInfo, tab)) {
         enablePopup(tab);
         showNotification(tab);
@@ -10,7 +10,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 });
 
 function shouldNotifyUser(changeInfo, tab) {
-    return changeInfo.status === 'complete' && tab.active && isShaparak(tab.url);
+    return changeInfo.status === 'complete' && isShaparak(tab.url);
 }
 
 function isShaparak(urlString) {
