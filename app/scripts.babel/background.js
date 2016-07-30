@@ -16,7 +16,7 @@ function shouldNotifyUser(changeInfo, tab) {
 function isShaparak(urlString) {
     try {
         const url = new URL(urlString);
-        return url.hostname.match(/shaparak.ir$/i) && url.protocol == 'https:';
+        return url.hostname.match(/\.shaparak\.ir$/i) && url.protocol == 'https:';
     } catch (e) {
         return false;
     }
