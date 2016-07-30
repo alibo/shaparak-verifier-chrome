@@ -16,6 +16,8 @@ const $ = gulpLoadPlugins();
 gulp.task('extras', () => {
     return gulp.src([
         'app/*.*',
+        'app/scripts/options.js',
+        'app/scripts/Notification.js',
         'app/fonts/**',
         'app/_locales/**',
         '!app/scripts.babel',
@@ -80,7 +82,7 @@ gulp.task('html', () => {
 gulp.task('chromeManifest', () => {
     return gulp.src('app/manifest.json')
         .pipe($.chromeManifest({
-            buildnumber: true,
+            buildnumber: false,
             background: {
                 target: 'scripts/background.js',
                 exclude: [
@@ -98,12 +100,6 @@ gulp.task('chromeManifest', () => {
 });
 
 gulp.task('babel', () => {
-    // return gulp.src('app/scripts.babel/**/*.js')
-    //     .pipe($.babel({
-    //       presets: ['es2015']
-    //     }))
-    //     .pipe(gulp.dest('app/scripts'));
-    //   
     return gulp.src('app/scripts.babel/**/*.js')
         .pipe(through2.obj(function(file, enc, next) {
             browserify(file.path, {
